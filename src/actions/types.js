@@ -1,0 +1,3 @@
+export const SET_POKEMONS = 'SET_POKEMONS';
+export const SWITCH_LOADING = 'SWITCH_LOADING';
+export const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
