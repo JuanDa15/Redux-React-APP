@@ -50,9 +50,8 @@ import {Container, Grid } from '@mui/material'
 import SearchBar from './components/SearchBar'
 import CardList from './components/CardList'
 import List from './components/List'
-import { getPokemons } from './api/getPokemons'
-import { getPokemonsDetailed } from './actions'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { fetchPokemonWithDetails } from './slices/dataSlice'
 
 function App() {
 
@@ -61,12 +60,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const fetchPokemons = async () => {
-      const resp = await getPokemons()
-      dispatch(getPokemonsDetailed(resp))
-    }
-
-    fetchPokemons();
+    dispatch(fetchPokemonWithDetails())
   }, [])
 
   return (

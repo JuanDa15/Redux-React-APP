@@ -1,7 +1,7 @@
 import { Card, CardActions, CardContent, CardMedia, Chip, IconButton, Typography } from "@mui/material"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch } from "react-redux";
-import { markAsFavorite } from "../actions";
+import { toggleFavorite } from "../slices/dataSlice";
 
 const chipColors = {
   grass: '#4CAF50',
@@ -28,7 +28,7 @@ export default function CardList({ name, sprite, types = [], favorite, id }) {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    dispatch(markAsFavorite(id))
+    dispatch(toggleFavorite(id))
   }
 
   return (

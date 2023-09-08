@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { pokemonsReducer } from "./pokemons";
-import { uiReducer } from "./ui";
+import dataSlice from "../slices/dataSlice";
+import uiSlice from "../slices/uiSlice";
 
 export const ROOT_REDUCER = combineReducers({
-  pokemons: pokemonsReducer,
-  ui: uiReducer
+  pokemons: dataSlice,
+  ui: uiSlice
 })
